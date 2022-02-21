@@ -112,7 +112,7 @@ pygame.display.init()
 clock = pygame.time.Clock()
 
 display = pygame.display.set_mode((SCREEN_WIDTH,SCREEN_HEIGHT))
-pygame.display.set_caption("PyTongIts")
+pygame.display.set_caption("PySolitaire")
 
 mouse=Mouse()
 
