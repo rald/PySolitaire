@@ -57,6 +57,19 @@ class Card:
 
             if diffx==0 and diffy==0:
                 self.is_moving=False            
+
+        if self.x<0:
+            self.x=0
+
+        if self.y<0:
+            self.y=0
+
+        if self.x>SCREEN_WIDTH-CARD_WIDTH:
+           self.x=SCREEN_WIDTH-CARD_WIDTH
+                            
+        if self.y>SCREEN_HEIGHT-CARD_HEIGHT:
+           self.y=SCREEN_HEIGHT-CARD_HEIGHT
+
    
     def move_to(self,x,y):
         self.destx=x
@@ -164,7 +177,7 @@ for h in range(0,3):
     hands.append([])
     for c in range(0,13 if h==0 else 12):
         hands[h].append(stock.pop(len(stock)-1))
-        hands[h][c].move_to(c*(CARD_WIDTH/4),h*(CARD_HEIGHT+CARD_HEIGHT/8)+CARD_HEIGHT+CARD_HEIGHT/8)
+        # hands[h][c].move_to(c*(CARD_WIDTH/4),h*(CARD_HEIGHT+CARD_HEIGHT/8)+CARD_HEIGHT+CARD_HEIGHT/8)
 
 
 
@@ -358,7 +371,7 @@ while not quit:
         mouse_right_hold=False
 
 
-
+    '''
     if is_dealing:
 
         hands[dh][dc].z=maxz
@@ -376,10 +389,11 @@ while not quit:
                     is_dealing=False
 
     else:
-
-        for h in range(0,len(hands)):
-            for c in range(0,len(hands[h])):
-                hands[h][c].update()
+    '''
+    
+    for h in range(0,len(hands)):
+        for c in range(0,len(hands[h])):
+            hands[h][c].update()
 
 
 
